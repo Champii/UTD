@@ -50,14 +50,14 @@ function GetNextPoint (current : Vector3, last : Vector3, map : String[]) : Vect
 	return next;
 }
 
-function MakeMonserPath (start : Vector3, map : String[]) : Vector3[] {
+function MakeMonserPath (start : Vector3, map : String[]) {
 	Debug.Log(map[start.x][start.z]);
 	var lastPoint : Vector3 = Vector3(-1, -1, -1);
 	var nextPoint : Vector3;
 	var currentPoint : Vector3 = start;
 	var tmpPoint : Vector3;
 
-//	monsterPath.Add(start);
+	monsterPath.Add(start);
 	nextPoint = GetNextPoint(currentPoint, Vector3(-1, -1, -1), map);
 	while (nextPoint.y != -1)
 	{
@@ -65,12 +65,23 @@ function MakeMonserPath (start : Vector3, map : String[]) : Vector3[] {
 		lastPoint = currentPoint;
 		currentPoint = nextPoint;
 		nextPoint = GetNextPoint(currentPoint, lastPoint, map);
-		Debug.Log(nextPoint);
-
 	}
 	
 	Debug.Log(monsterPath);
+	monsterPath = SwapPathCoord(monsterPath);
 	
+}
+
+function SwapPathCoord (arr : Array) : Array {
+	
+	for (var i = 0; i < arr.length; i++)
+	{
+		var tmp;
+		tmp = arr[i].x;
+		arr[i].x = arr[i].z;
+		arr[i].z = tmp;
+	}
+	return (arr);
 }
 
 function Start () {
@@ -89,11 +100,11 @@ function Start () {
 		    	Instantiate(ground, Vector3(x, 0, z), transform.rotation);
     		if (lines[j][i] == "2") //MonsterSpawner
     		{
-    			monsterSpawner.position = Vector3(x, 0.5, z);
+    			monsterSpawner.position = Vector3(z, 0.5, x);
     			MakeMonserPath(Vector3(i, 0, j), lines);
 			}
     		if (lines[j][i] == "3") //MainTower
-		    	Instantiate(mainTower, Vector3(x, 0.5, z), transform.rotation);
+		    	Instantiate(mainTower, Vector3(z, 0.5, x), transform.rotation);
 		    	
 			x += ground.renderer.bounds.size.x;
     	}

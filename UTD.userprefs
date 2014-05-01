@@ -1,15 +1,41 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MonsterMove.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Map.js">
     <Files>
-      <File FileName="Assets\Scripts\MonsterMove.js" Line="9" Column="26" />
-      <File FileName="Assets\Scripts\MonsterSpawner.js" Line="13" Column="1" />
-      <File FileName="Assets\Scripts\Map.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Map.js" Line="28" Column="22" />
+      <File FileName="Assets\map.txt" Line="4" Column="2" />
+      <File FileName="Assets\Scripts\FreeCamera.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GUICamera.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MonsterSpawner.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Map.js" Line="119" Column="1" />
+      <File FileName="Assets\Scripts\TowerSpawner.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ContextMenu.js" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-UnityScript" expanded="True">
+            <Node name="Scripts" expanded="True">
+              <Node name="Map.js" selected="True" />
+            </Node>
+          </Node>
+          <Node name="Assembly-UnityScript-firstpass" expanded="True" />
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>map[current.z]</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Champii\Documents\UTD\Assets\Scripts\Map.js" line="28" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

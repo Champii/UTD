@@ -10,6 +10,7 @@ import System.IO;
 
 public var fileName = "map.txt";
 public var ground : GameObject;
+public var path : GameObject;
 public var monsterSpawner : Transform;
 public var mainTower : GameObject;
 
@@ -66,8 +67,6 @@ function MakeMonserPath (start : Vector3, map : String[]) {
 		currentPoint = nextPoint;
 		nextPoint = GetNextPoint(currentPoint, lastPoint, map);
 	}
-	
-	Debug.Log(monsterPath);
 	monsterPath = SwapPathCoord(monsterPath);
 	
 }
@@ -96,8 +95,8 @@ function Start () {
     {
     	for (var i = 0; i < lines.length; i++)
     	{
-    		if (lines[j][i] != "0") //Ground
-		    	Instantiate(ground, Vector3(x, 0, z), transform.rotation);
+    		if (lines[j][i] != "4") //Ground
+		    	Instantiate(ground, Vector3(z, 0, x), transform.rotation);
     		if (lines[j][i] == "2") //MonsterSpawner
     		{
     			monsterSpawner.position = Vector3(z, 0.5, x);
@@ -105,6 +104,9 @@ function Start () {
 			}
     		if (lines[j][i] == "3") //MainTower
 		    	Instantiate(mainTower, Vector3(z, 0.5, x), transform.rotation);
+			if (lines[j][i] == "4") // path
+				Instantiate(path, Vector3(z, 0, x), transform.rotation);
+
 		    	
 			x += ground.renderer.bounds.size.x;
     	}

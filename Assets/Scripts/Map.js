@@ -25,31 +25,31 @@ function GetNextPoint (current : Vector3, last : Vector3, map : String[]) : Vect
 	Debug.Log(last);
 
 
-	if (map[current.z][current.x + 1] == "4" && (current.x != last.x && current.z != last.z))
+	if (map[current.z][current.x + 1] == "4" && (current.x + 1 != last.x && current.z != last.z))
 	{
 		next = Vector3(current.x + 1, 0, current.z);
-		Debug.Log(map[current.z][current.x + 1]);
+		//Debug.Log(map[current.z][current.x + 1]);
 
 	}
-	else if (current.x && map[current.z][current.x - 1] == "4" && (current.x != last.x && current.z != last.z))
+	else if (current.x && map[current.z][current.x - 1] == "4" && (current.x - 1 != last.x && current.z != last.z))
 	{
 		next = Vector3(current.x - 1, 0, current.z);
-		Debug.Log(map[current.z][current.x - 1]);
+		//Debug.Log(map[current.z][current.x - 1]);
 
 	}
 		
-	else if (map[current.z + 1][current.x + 1] == "4" && (current.x != last.x && current.z != last.z))
+	else if (map[current.z + 1][current.x + 1] == "4" && (current.x + 1 != last.x && current.z + 1 != last.z))
 		next = Vector3(current.x + 1, 0, current.z + 1);
-	else if (map[current.z + 1][current.x] == "4" && (current.x != last.x && current.z != last.z))
+	else if (map[current.z + 1][current.x] == "4" && (current.x != last.x && current.z + 1 != last.z))
 		next = Vector3(current.x, 0, current.z + 1);
-	else if (current.x && map[current.z + 1][current.x - 1] == "4" && (current.x != last.x && current.z != last.z))
+	else if (current.x && map[current.z + 1][current.x - 1] == "4" && (current.x - 1!= last.x && current.z + 1 != last.z))
 		next = Vector3(current.x - 1, 0, current.z + 1);
 
-	else if (current.z && map[current.z - 1][current.x + 1] == "4" && (current.x != last.x && current.z != last.z))
+	else if (current.z && map[current.z - 1][current.x + 1] == "4" && (current.x + 1 != last.x && current.z - 1 != last.z))
 		next = Vector3(current.x + 1, 0, current.z - 1);
-	else if (current.z && map[current.z - 1][current.x] == "4" && (current.x != last.x && current.z != last.z))
+	else if (current.z && map[current.z - 1][current.x] == "4" && (current.x != last.x && current.z - 1 != last.z))
 		next = Vector3(current.x + 1, 0, current.z - 1);
-	else if (current.z && current.x && map[current.z - 1][current.x - 1] == "4" && (current.x != last.x && current.z != last.z))
+	else if (current.z && current.x && map[current.z - 1][current.x - 1] == "4" && (current.x - 1 != last.x && current.z - 1 != last.z))
 		next = Vector3(current.x + 1, 0, current.z - 1);
 
 	Debug.Log("NEXT");

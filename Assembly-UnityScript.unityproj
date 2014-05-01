@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\FreeCamera.js" />
      <Compile Include="Assets\Scripts\GUICamera.js" />
      <Compile Include="Assets\Scripts\Map.js" />
+     <Compile Include="Assets\Scripts\MonsterMove.js" />
      <Compile Include="Assets\Scripts\MonsterSpawner.js" />
      <Compile Include="Assets\Scripts\TowerSpawner.js" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />

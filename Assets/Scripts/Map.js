@@ -24,36 +24,25 @@ function GetNextPoint (current : Vector3, last : Vector3, map : String[]) : Vect
 	Debug.Log("last = ");
 	Debug.Log(last);
 
-
-	if (map[current.z][current.x + 1] == "4" && (current.x + 1 != last.x && current.z != last.z))
-	{
+	// en bas
+	if (map[current.z][current.x + 1] == "4" && (current.x + 1 != last.x || current.z != last.z))
+//		next = Vector3(current.z, 0, current.x + 1);
 		next = Vector3(current.x + 1, 0, current.z);
-		//Debug.Log(map[current.z][current.x + 1]);
 
-	}
-	else if (current.x && map[current.z][current.x - 1] == "4" && (current.x - 1 != last.x && current.z != last.z))
-	{
+	// au dessus
+	else if (current.x && map[current.z][current.x - 1] == "4" && (current.x - 1 != last.x || current.z != last.z))
+//		next = Vector3(current.z, 0, current.x - 1);
 		next = Vector3(current.x - 1, 0, current.z);
-		//Debug.Log(map[current.z][current.x - 1]);
 
-	}
-		
-	else if (map[current.z + 1][current.x + 1] == "4" && (current.x + 1 != last.x && current.z + 1 != last.z))
-		next = Vector3(current.x + 1, 0, current.z + 1);
-	else if (map[current.z + 1][current.x] == "4" && (current.x != last.x && current.z + 1 != last.z))
+	// a droite
+	else if (map[current.z + 1][current.x] == "4" && (current.x != last.x || current.z + 1 != last.z))
+//		next = Vector3(current.z + 1, 0, current.x);
 		next = Vector3(current.x, 0, current.z + 1);
-	else if (current.x && map[current.z + 1][current.x - 1] == "4" && (current.x - 1!= last.x && current.z + 1 != last.z))
-		next = Vector3(current.x - 1, 0, current.z + 1);
 
-	else if (current.z && map[current.z - 1][current.x + 1] == "4" && (current.x + 1 != last.x && current.z - 1 != last.z))
-		next = Vector3(current.x + 1, 0, current.z - 1);
-	else if (current.z && map[current.z - 1][current.x] == "4" && (current.x != last.x && current.z - 1 != last.z))
-		next = Vector3(current.x + 1, 0, current.z - 1);
-	else if (current.z && current.x && map[current.z - 1][current.x - 1] == "4" && (current.x - 1 != last.x && current.z - 1 != last.z))
-		next = Vector3(current.x + 1, 0, current.z - 1);
-
-	Debug.Log("NEXT");
-	Debug.Log(next);
+	// a gauche
+	else if (current.z && map[current.z - 1][current.x] == "4" && (current.x != last.x || current.z - 1 != last.z))
+//		next = Vector3(current.z - 1, 0, current.x);
+		next = Vector3(current.x, 0, current.z - 1);
 
 	if (map[next.z][next.x] == "3")
 		return Vector3(0, -1, 0);
@@ -66,10 +55,10 @@ function MakeMonserPath (start : Vector3, map : String[]) : Vector3[] {
 	var lastPoint : Vector3 = Vector3(-1, -1, -1);
 	var nextPoint : Vector3;
 	var currentPoint : Vector3 = start;
+	var tmpPoint : Vector3;
 
-	monsterPath.Add(start);
+//	monsterPath.Add(start);
 	nextPoint = GetNextPoint(currentPoint, Vector3(-1, -1, -1), map);
-	Debug.Log(nextPoint);
 	while (nextPoint.y != -1)
 	{
 		monsterPath.Add(nextPoint);
@@ -101,7 +90,7 @@ function Start () {
     		if (lines[j][i] == "2") //MonsterSpawner
     		{
     			monsterSpawner.position = Vector3(x, 0.5, z);
-    			MakeMonserPath(Vector3(j, 0, i), lines);
+    			MakeMonserPath(Vector3(i, 0, j), lines);
 			}
     		if (lines[j][i] == "3") //MainTower
 		    	Instantiate(mainTower, Vector3(x, 0.5, z), transform.rotation);

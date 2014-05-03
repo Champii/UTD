@@ -10,7 +10,7 @@ import System.IO;
 
 public var fileName = "map.txt";
 public var ground : GameObject;
-public var path : GameObject;
+public var path : GameObject; 
 public var monsterSpawner : Transform;
 public var mainTower : GameObject;
 

@@ -38,3 +38,8 @@ function Update () {
 		Destroy(gameObject, 1);
 	}
 }
+
+function OnEnterCollision(other : Collision) {
+	Debug.Log("COLLISIONNNNNNN");
+	Debug.Log(other);
+}

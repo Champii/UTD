@@ -17,14 +17,13 @@ function GetTarget () {
 		{
 //			Debug.Log(hitColliders[i].name);
 			target = hitColliders[i].gameObject;
-			Fire();
 			return ;
 		}
 }
 
 function Fire () {
-	var bullet = Instantiate(bullet, transform.position, Quaternion.identity);
-	var bulletScript = bullet.GetComponent(Bullet);
+	var bulletInstance = Instantiate(bullet, transform.position, Quaternion.identity);
+	var bulletScript = bulletInstance.GetComponent(Bullet);
 	bulletScript.target = target;
 }
 
@@ -32,9 +31,7 @@ function Update () {
 	if (frameCount == fireRate)
 	{
 		if (!target)
-		{
 			GetTarget();
-		}
 		else
 			Fire();
 		frameCount = 0;

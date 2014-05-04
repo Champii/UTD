@@ -17,7 +17,7 @@ function Start () {
 }
 
 function Spawn () {
-	Instantiate(monster, spawner.position, spawner.rotation);
+	Instantiate(monster, transform.position, transform.rotation);
 }
 
 function SpawnWave()

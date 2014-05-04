@@ -100,7 +100,17 @@ function Start () {
 
 			}
     		if (lines[j][i] == "3") //MainTower
-		    	Instantiate(mainTower, Vector3(z, 0.5, x), transform.rotation);
+    		{
+		    	var mytower = Instantiate(mainTower, Vector3(z, 0, x), transform.rotation);
+				var targetSize : float = 0.05;
+				var scale : Vector3;
+			 
+				scale.z = (targetSize * mytower.transform.localScale.z) / ground.renderer.bounds.size.z;
+				scale.x = (targetSize * mytower.transform.localScale.x) / ground.renderer.bounds.size.x;
+				scale.y = (targetSize * mytower.transform.localScale.z) / ground.renderer.bounds.size.z;
+			 	mytower.transform.localScale = scale;
+
+	    	}
 			if (lines[j][i] == "4") // path
 				Instantiate(path, Vector3(z, 0, x), transform.rotation);
 

@@ -5,6 +5,7 @@ public var monsterSpawner : GameObject;
 
 private var monsterSpawnerScript : MonsterSpawner;
 private var towerSpawnerScript : TowerSpawner;
+private var playerLifeScript : PlayerLife;
 private var menuVisible : boolean = false;
 
 private var moneyScript : Money;
@@ -12,6 +13,7 @@ private var moneyScript : Money;
 function Awake () {
 	monsterSpawnerScript = monsterSpawner.GetComponent(MonsterSpawner);
 	towerSpawnerScript = main.GetComponent(TowerSpawner);
+	playerLifeScript = main.GetComponent(PlayerLife);
 	moneyScript = GameObject.Find("Main Camera").GetComponent(Money);
 }
 
@@ -32,7 +34,7 @@ function OnGUI() {
 
 	GUI.Label (Rect(Screen.width - 200, 0, 100, 20), "Money : " + moneyScript.money);
 
-	GUI.Label (Rect(Screen.width - 100, 0, 100, 20), "Life : 10");
+	GUI.Label (Rect(Screen.width - 100, 0, 100, 20), "Life : " + playerLifeScript.life);
 
 
 }

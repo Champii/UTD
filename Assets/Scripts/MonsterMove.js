@@ -11,9 +11,11 @@ private var route = new Array(Vector3(10,0,10), Vector3(-10,0,-10));
 private var actualPosition : int=-1;
 
 private var monsterHealthScript : MonsterHealth;
+private var playerLifeScript : PlayerLife;
  
 function Start() {
 	mapScript = GameObject.Find("Main").GetComponent(Map);
+	playerLifeScript = GameObject.Find("Main").GetComponent(PlayerLife);
 	monsterHealthScript = GetComponent(MonsterHealth);
 	route = mapScript.monsterPath;
     startPoint = GameObject.Find("MonsterSpawner").transform.position;
@@ -36,7 +38,10 @@ function Update () {
 		}
 	}
 	else {
-		monsterHealthScript.Death();
+		playerLifeScript.LoseLife();
+		Destroy(monsterHealthScript);
+		Destroy(this);
+		Destroy(gameObject);
 	}
 }
 

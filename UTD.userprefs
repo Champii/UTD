@@ -1,14 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MonsterMove.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Map.js">
     <Files>
       <File FileName="Assets\Scripts\Target.js" Line="15" Column="29" />
-      <File FileName="Assets\Scripts\Bullet.js" Line="23" Column="37" />
-      <File FileName="Assets\Scripts\MonsterSpawner.js" Line="4" Column="32" />
-      <File FileName="Assets\Scripts\MonsterMove.js" Line="40" Column="1" />
-      <File FileName="Assets\Scripts\TowerSpawner.js" Line="10" Column="1" />
-      <File FileName="Assets\Scripts\Map.js" Line="91" Column="44" />
-      <File FileName="Assets\Scripts\Money.js" Line="11" Column="1" />
+      <File FileName="Assets\Scripts\Bullet.js" Line="21" Column="37" />
+      <File FileName="Assets\Scripts\MonsterSpawner.js" Line="39" Column="6" />
+      <File FileName="Assets\Scripts\MonsterMove.js" Line="39" Column="31" />
+      <File FileName="Assets\Scripts\TowerSpawner.js" Line="19" Column="4" />
+      <File FileName="Assets\Scripts\Map.js" Line="104" Column="57" />
+      <File FileName="Assets\Scripts\Money.js" Line="6" Column="13" />
+      <File FileName="Assets\Scripts\MonsterHealth.js" Line="19" Column="2" />
+      <File FileName="Assets\Scripts\GUICamera.js" Line="31" Column="50" />
+      <File FileName="Assets\Scripts\ContextMenu.js" Line="14" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

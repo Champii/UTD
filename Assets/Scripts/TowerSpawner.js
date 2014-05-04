@@ -27,9 +27,9 @@ function SpawnAt (position : Vector3) {
 	scale.y = (targetSize * mytower.transform.localScale.z) / tower.renderer.bounds.size.z;
  	mytower.transform.localScale = scale;
 
- 	position.x = position.x - position.x % tower.renderer.bounds.size.x;
-	position.y = 1.5;
-	position.z = position.z - position.z % tower.renderer.bounds.size.z;
+// 	position.x = position.x - position.x % tower.renderer.bounds.size.x;
+//	position.y = 1.5;
+//	position.z = position.z - position.z % tower.renderer.bounds.size.z;
 
  	 	 	
 }

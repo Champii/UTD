@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\MonsterHealth.js" />
      <Compile Include="Assets\Scripts\MonsterMove.js" />
      <Compile Include="Assets\Scripts\MonsterSpawner.js" />
+     <Compile Include="Assets\Scripts\PlayerLife.js" />
      <Compile Include="Assets\Scripts\Target.js" />
      <Compile Include="Assets\Scripts\TowerSpawner.js" />
      <Compile Include="Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js" />
@@ -84,6 +85,7 @@
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
+     <None Include="Assets\WatchTower\ReadMe.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>

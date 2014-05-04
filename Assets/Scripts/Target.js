@@ -3,6 +3,8 @@
 public var bullet : GameObject;
 
 private var target : GameObject;
+private var fireRate : int = 100;
+private var frameCount : int = 0;
 
 function Start () {
 
@@ -26,13 +28,18 @@ function Fire () {
 	bulletScript.target = target;
 }
 
-function Update () {
-
-	if (!target)
+function Update () {	
+	if (frameCount == fireRate)
 	{
-		GetTarget();
+		if (!target)
+		{
+			GetTarget();
+		}
+		else
+			Fire();
+		frameCount = 0;
 	}
-//	else
+	frameCount++;
 //	{
 //		if (Time.time % 10000)
 //			Fire();

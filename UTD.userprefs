@@ -1,15 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TowerSpawner.js">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MonsterSpawner.js">
     <Files>
-      <File FileName="Assets\Scripts\TowerSpawner.js" Line="37" Column="2" />
-      <File FileName="Assets\map.txt" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Map.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MonsterMove.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MonsterSpawner.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ContextMenu.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TowerSpawner.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Target.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Target.js" Line="2" Column="1" />
+      <File FileName="Assets\Scripts\Bullet.js" Line="21" Column="23" />
+      <File FileName="Assets\Scripts\MonsterSpawner.js" Line="32" Column="6" />
+      <File FileName="Assets\Scripts\MonsterMove.js" Line="49" Column="2" />
+      <File FileName="Assets\Scripts\TowerSpawner.js" Line="29" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

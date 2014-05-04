@@ -20,11 +20,6 @@ function GetNextPoint (current : Vector3, last : Vector3, map : String[]) : Vect
 
 	var next : Vector3 = Vector3(0, -1, 0);
 	
-	Debug.Log("Current = ");
-	Debug.Log(current);
-	Debug.Log("last = ");
-	Debug.Log(last);
-
 	// en bas
 	if (map[current.z][current.x + 1] == "4" && (current.x + 1 != last.x || current.z != last.z))
 //		next = Vector3(current.z, 0, current.x + 1);

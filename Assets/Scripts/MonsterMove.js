@@ -9,6 +9,7 @@ private var startPoint : Vector3;
 private var startTime : float;
 private var route = new Array(Vector3(10,0,10), Vector3(-10,0,-10));
 private var actualPosition : int=-1;
+private var hitPoints : int = 2;
  
 function Start() {
 	mapScript = GameObject.Find("Main").GetComponent(Map);
@@ -33,13 +34,25 @@ function Update () {
 		}
 	}
 	else {
-		animation.Play("death");
-		Destroy(this);
-		Destroy(gameObject, 1);
+		death();
 	}
 }
 
-function OnEnterCollision(other : Collision) {
-	Debug.Log("COLLISIONNNNNNN");
-	Debug.Log(other);
+function deceaseHitPoints(damages : int)
+{
+	hitPoints -= damages;
+	if (hitPoints <= 0)
+		death();
+}
+
+function death()
+{
+	animation.Play("death");
+	Destroy(this);
+	Destroy(gameObject, 1);
+
+}
+
+function OnCollisionEnter(collision : Collision) {
+
 }

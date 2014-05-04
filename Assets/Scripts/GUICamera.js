@@ -7,9 +7,12 @@ private var monsterSpawnerScript : MonsterSpawner;
 private var towerSpawnerScript : TowerSpawner;
 private var menuVisible : boolean = false;
 
+private var moneyScript : Money;
+
 function Awake () {
 	monsterSpawnerScript = monsterSpawner.GetComponent(MonsterSpawner);
 	towerSpawnerScript = main.GetComponent(TowerSpawner);
+	moneyScript = GameObject.Find("Main Camera").GetComponent(Money);
 }
 
 function Start () {
@@ -20,30 +23,16 @@ function Update() {
 
 function OnGUI() {
 
-	if (GUI.Button(Rect(0, 0, 60, 20), "Spawn !"))
-		monsterSpawnerScript.Spawn();
+	GUI.Box (Rect(0, 0, Screen.width, 30), "");
+	
+	
+	GUI.Label (Rect(0, 0, 100, 20), "Wave : " + (monsterSpawnerScript.actualWave + 1));
 
-	if (menuVisible)
-	{
-		GUI.Box (Rect(0, Screen.height - 100, Screen.width, 100), "Loader Menu");
+	GUI.Label (Rect(100, 0, 200, 20), "Next wave in : " + Mathf.FloorToInt(monsterSpawnerScript.waveTime - (Time.time - monsterSpawnerScript.waveTimer)));
 
-		if (GUI.Button(Rect(0, Screen.height - 20, 20, 20), "-"))
-			menuVisible = !menuVisible;
-			
-		if (GUI.Button(Rect(30, Screen.height - 90, 80, 80), "Tower 1"))
-		{
+	GUI.Label (Rect(Screen.width - 200, 0, 100, 20), "Money : " + moneyScript.money);
 
-		}
+	GUI.Label (Rect(Screen.width - 100, 0, 100, 20), "Life : 10");
 
-		if (GUI.Button(Rect(120, Screen.height - 90, 80, 80), "Tower 2"))
-			;
-		if (GUI.Button(Rect(210, Screen.height - 90, 80, 80), "Tower 3"))
-			;
 
-	}
-	else
-	{
-		if (GUI.Button(Rect(0, Screen.height - 20, 20, 20), "+"))
-			menuVisible = !menuVisible;
-	}
 }

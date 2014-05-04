@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\FreeCamera.js" />
      <Compile Include="Assets\Scripts\GUICamera.js" />
      <Compile Include="Assets\Scripts\Map.js" />
+     <Compile Include="Assets\Scripts\Money.js" />
+     <Compile Include="Assets\Scripts\MonsterHealth.js" />
      <Compile Include="Assets\Scripts\MonsterMove.js" />
      <Compile Include="Assets\Scripts\MonsterSpawner.js" />
      <Compile Include="Assets\Scripts\Target.js" />

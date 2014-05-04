@@ -96,6 +96,8 @@ function Start () {
     		{
     			monsterSpawner.position = Vector3(z, 0.5, x);
     			MakeMonserPath(Vector3(i, 0, j), lines);
+				Instantiate(path, Vector3(z, 0, x), transform.rotation);
+
 			}
     		if (lines[j][i] == "3") //MainTower
 		    	Instantiate(mainTower, Vector3(z, 0.5, x), transform.rotation);

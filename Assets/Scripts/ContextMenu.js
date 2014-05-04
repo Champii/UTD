@@ -7,8 +7,11 @@ private var menuVisible : boolean = false;
 private var objectHit : GameObject;
 private var mousePos : Vector2;
 
+private var moneyScript : Money;
+
 function Awake () {
 	towerSpawnerScript = main.GetComponent(TowerSpawner);
+	moneyScript = GetComponent(Money);
 }
 
 function Start () {
@@ -73,7 +76,8 @@ function OnGUI () {
 			{
 				if (GUI.Button(Rect(mousePos.x + 10, Screen.height - mousePos.y + 20, 80, 20), "Place Tower"))
 				{
-					towerSpawnerScript.SpawnAt(objectHit.transform.position);
+					if (moneyScript.Buy(towerSpawnerScript.towerCost))
+						towerSpawnerScript.SpawnAt(objectHit.transform.position);
 					menuVisible = false;
 				}
 			}

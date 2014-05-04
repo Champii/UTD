@@ -15,12 +15,10 @@ function Update () {
 }
 
 function OnCollisionEnter(collision : Collision) {
-	Debug.Log("Collision !");
 	if (collision.gameObject.name == "PseudoSpider(Clone)")
 	{
-		Debug.Log("Yeah");
-		var monster : MonsterMove = collision.gameObject.GetComponent("MonsterMove");
-		monster.deceaseHitPoints(damages);
+		var monster : MonsterHealth = collision.gameObject.GetComponent("MonsterHealth");
+		monster.DeceaseHitPoints(damages);
 		Destroy(gameObject);
 	}
 }

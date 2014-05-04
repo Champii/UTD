@@ -2,12 +2,14 @@
 
 public var monster : GameObject;
 public var spawner : Transform;
+
+public var waveTimer : float = 0;
+
 private var waves_numbers = new int[2];
 private var waves_monsters = new String[2];
 
-private var actualWave : int = 0;
-private var waveTime : int = 15;
-private var waveTimer : float = 0;
+public var actualWave : int = 0;
+public var waveTime : int = 15;
 private var spawnedMonsters : int = 0;
 
 function Start () {

@@ -9,10 +9,12 @@ private var startPoint : Vector3;
 private var startTime : float;
 private var route = new Array(Vector3(10,0,10), Vector3(-10,0,-10));
 private var actualPosition : int=-1;
-private var hitPoints : int = 2;
+
+private var monsterHealthScript : MonsterHealth;
  
 function Start() {
 	mapScript = GameObject.Find("Main").GetComponent(Map);
+	monsterHealthScript = GetComponent(MonsterHealth);
 	route = mapScript.monsterPath;
     startPoint = GameObject.Find("MonsterSpawner").transform.position;
     startTime = Time.time;
@@ -34,24 +36,10 @@ function Update () {
 		}
 	}
 	else {
-		death();
+		monsterHealthScript.Death();
 	}
 }
 
-function deceaseHitPoints(damages : int)
-{
-	hitPoints -= damages;
-	if (hitPoints <= 0)
-		death();
-}
-
-function death()
-{
-	animation.Play("death");
-	Destroy(this);
-	Destroy(gameObject, 1);
-
-}
 
 function OnCollisionEnter(collision : Collision) {
 
